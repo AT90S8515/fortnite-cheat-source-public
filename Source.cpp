@@ -104,8 +104,8 @@ Vector3 ProjectWorldToScreen(Vector3 WorldLocation)
 	Vector3 Screenlocation = Vector3(0, 0, 0);
 	Vector3 Camera;
 
-	auto Nigger = read<uintptr_t>(DriverHandle, processID, Localplayer + 0xa8);
-	uint64_t Nigger1 = read<uintptr_t>(DriverHandle, processID, Nigger + 8);
+	auto chain = read<uintptr_t>(DriverHandle, processID, Localplayer + 0xa8);
+	uint64_t chain1 = read<uintptr_t>(DriverHandle, processID, chain + 8);
 
 	Camera.x = read<float>(DriverHandle, processID, Nigger1 + 0x678);
 	Camera.y = read<float>(DriverHandle, processID, Rootcomp + 0x12C);
