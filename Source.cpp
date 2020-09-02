@@ -107,7 +107,7 @@ Vector3 ProjectWorldToScreen(Vector3 WorldLocation)
 	auto chain = read<uintptr_t>(DriverHandle, processID, Localplayer + 0xa8);
 	uint64_t chain1 = read<uintptr_t>(DriverHandle, processID, chain + 8);
 
-	Camera.x = read<float>(DriverHandle, processID, Nigger1 + 0x678);
+	Camera.x = read<float>(DriverHandle, processID, chain1 + 0x678);
 	Camera.y = read<float>(DriverHandle, processID, Rootcomp + 0x12C);
 
 	float test = asin(Camera.x);
@@ -139,7 +139,7 @@ Vector3 ProjectWorldToScreen(Vector3 WorldLocation)
 	if (vTransformed.z < 1.f)
 		vTransformed.z = 1.f;
 
-	float zoom = read<float>(DriverHandle, processID, Nigger1 + 0x500);
+	float zoom = read<float>(DriverHandle, processID, chain1 + 0x500);
 
 	float FovAngle = 80.0f / (zoom / 1.19f);
 	float ScreenCenterX = width / 2.0f;
